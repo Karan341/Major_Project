@@ -1,0 +1,114 @@
+<% layout("layouts/boilerplate") %>
+
+  <div id="filters">
+   <a href="/listings?category=Hotel" class="filter listing-link">
+  <i class="fa-solid fa-fire"></i>
+  <p>Trending</p>
+</a>
+
+<a href="/listings?category=Room" class="filter listing-link">
+  <i class="fa-solid fa-bed"></i>
+  <p>Rooms</p>
+</a>
+
+<a href="/listings?category=Urban" class="filter listing-link">
+  <i class="fa-solid fa-mountain-city"></i>
+  <p>Iconic Cities</p>
+</a>
+
+<a href="/listings?category=Mountain" class="filter listing-link">
+  <i class="fa-solid fa-mountain"></i>
+  <p>Mountains</p>
+</a>
+
+<a href="/listings?category=Farm" class="filter listing-link">
+  <i class="fa-solid fa-cow"></i>
+  <p>Farms</p>
+</a>
+
+<a href="/listings?category=Mountain" class="filter listing-link">
+  <i class="fa-solid fa-hill-avalanche"></i>
+  <p>Hill</p>
+</a>
+
+<a href="/listings?category=Beach" class="filter listing-link">
+  <i class="fa-solid fa-water"></i>
+  <p>Beach</p>
+</a>
+
+<a href="/listings?category=Cabin" class="filter listing-link">
+  <i class="fa-solid fa-snowflake"></i>
+  <p>Cabins</p>
+</a>
+<a href="/listings?category=Urban" class="filter listing-link">
+  <i class="fa-solid fa-city"></i>
+  <p>Urban</p>
+</a>
+
+<a href="/listings?category=Nature" class="filter listing-link">
+  <i class="fa-solid fa-tree"></i>
+  <p>Nature</p>
+</a>
+<a href="/listings?<%= search ? 'search=' + search + '&' : '' %>category=Hotel" class="filter listing-link">
+  <i class="fa-solid fa-hotel"></i>
+  <p>Hotel</p>
+</a>
+
+
+    <div class="tax-toggel">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+        <label class="form-check-label" for="switchCheckDefault">Display total after taxes </label>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-3">
+
+    <% if(allListings.length===0) { %>
+      <p style="margin: 20px; font-size: 18px;">No listings found<% if(search) { %> for "<%= search %>" <% } %>
+              <% if(category) { %> in "<%= category %>" <% } %>
+      </p>
+      <% } else { %>
+
+        <% for (let listing of allListings) { %>
+          <div class="col">
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+              <div class="listing-card">
+                <div class="image-wrapper">
+                  <img src="<%= listing.image.url %>" alt="listing image">
+                </div>
+                <div class="listing-info">
+                  <h6>
+                    <%= listing.title %>
+                  </h6>
+                  <p>₹ <%= listing.price?.toLocaleString("en-IN") %> / night
+                      <i class="tax-info"> &nbsp; &nbsp; +18% GST </i>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <% } %>
+
+            <% } %>
+
+  </div>
+
+
+  <script>
+    let taxSwitch = document.getElementById('switchCheckDefault');
+    taxSwitch.addEventListener("click", () => {
+      let taxinfo = document.querySelectorAll('.tax-info');
+      for (let info of taxinfo) {
+        if (taxSwitch.checked) {
+          info.style.display = "inline";
+        } else {
+          info.style.display = "none";
+        }
+      }
+    });
+
+</script>

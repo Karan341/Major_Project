@@ -1,0 +1,536 @@
+  
+ body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+
+}
+
+main {
+  flex: 1;
+  padding-top: 2rem;
+}
+
+.container {
+  flex: 1;
+}
+
+/* navbar  */
+.navbar {
+  height: 5rem;
+  background-color: white !important;
+
+}
+
+  /* // iccon color   */
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+  cursor: pointer;
+
+}
+
+.nav-link {
+  color: #222222 !important;
+
+}
+
+.nav-link:hover {
+  color: #fe424d !important;
+}
+
+/* // footers  */
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+
+.f-info {
+  height: 8rem;
+  background-color: #ebebeb;
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+.f-info-socials a {
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+/* Facebook */
+.f-info-socials a:hover .fa-square-facebook {
+  color: #1877f2;
+}
+
+/* Instagram */
+.f-info-socials a:hover .fa-square-instagram {
+  color: #e1306c;
+}
+
+/* LinkedIn */
+.f-info-socials a:hover .fa-linkedin {
+  color: #0a66c2;
+}
+
+ /* //  Card image  */
+
+/* //  Card  */
+.listing-card {
+  width: 100%;
+}
+
+/* // Image wrapper */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* // Image  */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* // Overlay  */
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* // Hover effects  */
+.listing-card:hover .image-wrapper img {
+  transform: scale(1.07);
+}
+
+.listing-card:hover .image-wrapper::after {
+  opacity: 1;
+}
+
+ .listing-info {
+  padding-top: 6px;
+}
+
+.listing-info h6 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.listing-info p {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* Add Listing and Edit Listing page styles */
+
+  
+
+body {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 17px;
+  border: none;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.15rem rgba(0, 0, 0, 0.15);
+}
+
+.input-group-text {
+  background-color: #f1f3f5;
+  border: none;
+}
+
+
+
+.custom-btn {
+  background-color: #fe424d !important;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+
+}
+
+.custom-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(241, 62, 62, 0.2);
+}
+
+
+ /* // eddit listin   */
+
+body {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 17px;
+  border: none;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.15rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-dark {
+  background-color: #fe424d !important;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: #fff;
+  border: none;
+}
+
+.btn-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(241, 62, 62, 0.2);
+}
+
+/* // Image-preview  */
+.img-preview {
+  width: 220px;
+  height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: #f2f2f2;
+}
+
+.img-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* // show page  */
+.show-img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  display: block;
+
+}
+
+.card {
+  background-color: #fff;
+  overflow: hidden;
+  border: none;
+}
+
+.card-body {
+  padding-bottom: 0.75rem;
+}
+
+.card-body p,
+.card-body h4,
+.card-body h5 {
+  margin-bottom: 0.25rem;
+}
+
+
+/* // Filter section styles  */
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.filter {
+  text-align: center;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  /* margin-top: 0rem; */
+  opacity: 0.7;
+
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  
+
+}
+
+.tax-toggel {
+  margin-left: 1rem;
+  margin-top: -1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding:  1rem;
+  height: fit-content;
+  align-items: center;
+  /* margin-bottom: 2rem; */
+
+}
+
+.tax-info {
+  font-size: 0.7rem;
+  color: gray;
+  margin-left: 0.5rem;
+  display: none;
+}
+
+
+/* Navbar search bar styles */
+
+.navbar .Search-btn {
+  background-color: #fe424d;
+  color: #fff;
+  border-radius: 25px;
+  padding: 0.4rem 1rem;
+}
+
+.navbar .Search-btn:hover {
+  background-color: #fe424d;
+  color: #fff;
+}
+
+.navbar .Search-btn i {
+  margin-right: 0.5rem;
+  display: inline;
+}
+
+.navbar .Search-input {
+  border-radius: 25px;
+  width: 250px;
+  padding: 0.5rem 3rem 0.5rem 2rem;
+  font-size: 1rem;
+}
+
+        
+@media (max-width: 576px) {
+  .navbar .Search-input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar form {
+    width: 100%;
+  }
+} 
+
+@media (min-width: 768px) {
+  .categories {
+    max-width: 100%;
+  }
+}
+
+
+/* ===== FINAL NAVBAR  ===== */
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+/* Navbar */
+.navbar {
+  min-height: 5rem;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+/* Search */
+.Search-input {
+  border-radius: 25px;
+  width: 250px;
+  padding: 0.5rem 1.2rem;
+}
+
+.Search-btn {
+  background-color: #fe424d;
+  color: #fff;
+  border-radius: 25px;
+}
+
+.Search-btn:hover {
+  background-color: #fe424d;
+  color: #fff;
+}
+
+
+
+
+
+
+/* ===============================
+   MOBILE (phones)
+   max-width: 576px
+================================ */
+@media (max-width: 576px) {
+
+  /* Navbar mobile dropdown */
+  .navbar-collapse {
+    background: white;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  /* Search bar mobile */
+  .navbar form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .navbar .Search-input,
+  .Search-btn {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Show page image */
+  .show-img {
+    max-height: 250px;
+  }
+
+  /* Filters section */
+  #filters {
+    flex-wrap: wrap;
+  }
+
+  .tax-toggel {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+
+  .tax-info {
+    display: inline;
+  }
+}
+
+/* ===============================
+   TABLET
+   min-width: 768px
+================================ */
+@media (min-width: 768px) {
+
+  .categories {
+    max-width: 100%;
+  }
+
+  .listing-card {
+    max-width: 100%;
+  }
+}
+
+/* ===============================
+   TABLET → SMALL DESKTOP
+   768px – 991px
+================================ */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .row > * {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* ===============================
+   DESKTOP
+   min-width: 992px
+================================ */
+@media (min-width: 992px) {
+
+  .custom-container {
+    max-width: 1320px;
+     padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+}
+@media (min-width: 1400px) {
+  .custom-container {
+    max-width: 1380px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
