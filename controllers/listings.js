@@ -1,6 +1,6 @@
 
 const Listing = require("../models/listing");
-// const Listing = require("../models/listing");
+
 
 module.exports.indexListings = async (req, res) => {
   const { search, category } = req.query;
@@ -37,7 +37,7 @@ module.exports.indexListings = async (req, res) => {
     // FETCH FROM DB
     const allListings = await Listing.find(query);
 
-    // ✅ IMPORTANT FIX: redirect MAT karo
+    //  IMPORTANT FIX: redirect MAT karo
     if (!allListings || allListings.length === 0) {
       req.flash(
         "error",
@@ -68,47 +68,7 @@ module.exports.indexListings = async (req, res) => {
 };
 
 
-// module.exports.indexListings = async (req, res) => {
-//   const { search, category } = req.query;
-//   let query = {};
 
-//   //  Schema categories
-//   const categories = ["Beach", "Mountain", "Farm", "Room", "Urban", "Villa", "Cabin", "Hotel"];
-
-//   try {
-//     //  CATEGORY filter
-//     if (category && categories.includes(category)) {
-//       query.category = category;
-//     }
-
-//     //  SEARCH filter (title + location + description)
-//     if (search && search.trim().length > 0) {
-//       const searchRegex = new RegExp(search.trim(), "i"); // case-insensitive
-//       query.$or = [
-//         { title: searchRegex },
-//         { description: searchRegex },
-//         { location: searchRegex },
-//       ];
-//     }
-
-//     //  FETCH FROM DB
-//     const allListings = await Listing.find(query);
-
-//     //  NO RESULTS
-//     if (!allListings || allListings.length === 0) {
-//       req.flash("error", `No listings found${search ? ` for "${search}"` : ""}`);
-//       return res.redirect("/listings");
-//     }
-
-//     //  RENDER PAGE
-//     res.render("listings/index.ejs", { allListings, search, category });
-
-//   } catch (err) {
-//     console.error(err);
-//     req.flash("error", "Something went wrong!");
-//     return res.redirect("/listings");
-//   }
-// };
 
 
 
