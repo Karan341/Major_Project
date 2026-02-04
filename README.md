@@ -1,148 +1,155 @@
-Wanderlust 🌍
-Full-Stack Accommodation Listing Web Application
 
-Wanderlust is a full-stack web application inspired by platforms like Airbnb. It allows users to create, explore, and manage accommodation listings, leave reviews, and securely manage user accounts.
+# 🌍 Wanderlust
 
-The application is built using Node.js, Express.js, MongoDB, and follows the MVC (Model-View-Controller) architecture to ensure clean, scalable, and maintainable code.
+### Full-Stack Accommodation Listing Web Application
 
-🌐 Live Project
+**Wanderlust** is a full-stack web application inspired by platforms like Airbnb. It allows users to create, explore, and manage accommodation listings, post reviews, and securely manage user accounts.
 
-The project has been deployed for demonstration purposes.
+The application is built using **Node.js, Express.js, MongoDB**, and follows the **MVC (Model-View-Controller)** architecture to ensure a clean, scalable, and maintainable codebase.
 
-⚠️ Note: Since the application is hosted on a free service, it may take a few seconds to load on the first request.
+---
 
-🔗 Live URL:
-https://major-project-0rmj.onrender.com/
+## 🌐 Live Project
 
-📌 Project Overview
+🔗 **Live URL:**
+[https://major-project-0rmj.onrender.com/](https://major-project-0rmj.onrender.com/)
 
-Project Name: Wanderlust
+⚠️ *Note:* The project is hosted on a free deployment service, so the first load may take a few seconds.
 
-Type: Full-Stack Web Application
+---
 
-Purpose: To implement real-world full-stack development concepts such as authentication, authorization, CRUD operations, image uploads, session management, and server-side validation.
+## 📌 Project Overview
 
-✨ Key Features
-🔐 User Authentication & Authorization
+* **Project Name:** Wanderlust
+* **Type:** Full-Stack Web Application
+* **Purpose:**
+  To implement real-world full-stack development concepts such as:
 
-Secure signup, login, and logout using Passport.js
+  * Authentication & Authorization
+  * CRUD operations
+  * Image uploads
+  * Session management
+  * Server-side validation
 
-Password hashing and salting for enhanced security
+---
 
-Authorization checks to ensure only listing owners can edit or delete their listings
+## ✨ Key Features
 
-🏠 Listings Management
+### 🔐 Authentication & Authorization
 
-View all listings on the homepage
+* Secure signup, login, and logout using **Passport.js**
+* Password hashing and salting for enhanced security
+* Authorization checks to ensure only listing owners can edit or delete their listings
 
-Create new listings with title, description, price, location, and images
+### 🏠 Listings Management
 
-Edit and delete listings (owner-only access)
+* View all listings on the homepage
+* Create new listings with title, description, price, location, and images
+* Edit and delete listings (owner-only access)
+* Search and filter listings
 
-Search and filter listings
+### ⭐ Reviews System
 
-⭐ Reviews System
+* Users can add reviews to listings
+* Review deletion restricted to review authors only
+* One-to-many relationship between listings and reviews
 
-Users can add reviews to listings
+### 🖼️ Image Uploads
 
-Review deletion restricted to review authors
+* Image uploads handled using **Multer**
+* Images stored securely on **Cloudinary**
 
-One-to-many relationship between listings and reviews
+### ⚠️ Error Handling & Flash Messages
 
-🖼️ Image Uploads
+* Flash messages for success and error feedback
+* Custom middleware for handling invalid routes and server errors
 
-Image uploads handled using Multer
+### 📱 Responsive Design
 
-Images stored securely on Cloudinary
+* Mobile-friendly UI using CSS and JavaScript
+* Clean and user-friendly interface
 
-⚠️ Error Handling & Flash Messages
+### ✅ Data Validation
 
-Flash messages for success and error feedback
+* Server-side form validation using **Joi**
+* Prevents invalid or malicious data submission
 
-Custom middleware for handling invalid routes and server errors
+---
 
-📱 Responsive Design
+## 🛠️ Technology Stack
 
-Mobile-friendly UI using CSS and JavaScript
+### Backend
 
-Clean and user-friendly interface
+* Node.js
+* Express.js
 
-✅ Data Validation
+### Database
 
-Server-side form validation using Joi
+* MongoDB
+* Mongoose
 
-Prevents invalid or malicious data submission
+### Authentication
 
-🛠️ Technology Stack
-Backend
+* Passport.js
+* passport-local
+* passport-local-mongoose
 
-Node.js
+### Frontend
 
-Express.js
+* EJS (Templating Engine)
+* HTML, CSS, JavaScript
 
-Database
+### Tools & Libraries
 
-MongoDB
+* Cloudinary – Image storage
+* Multer – File uploads
+* connect-mongo – Session storage
+* connect-flash – Flash messages
+* Joi – Validation
+* method-override – PUT & DELETE support
+* dotenv – Environment variables
 
-Mongoose
+---
 
-Authentication
+## 🧱 Project Architecture
 
-Passport.js
+The application follows the **MVC (Model-View-Controller)** architecture:
 
-passport-local
-
-passport-local-mongoose
-
-Frontend
-
-EJS (Templating Engine)
-
-HTML, CSS, JavaScript
-
-Tools & Libraries
-
-Cloudinary – Image storage
-
-Multer – File uploads
-
-connect-mongo – Session storage
-
-connect-flash – Flash messages
-
-Joi – Validation
-
-method-override – PUT & DELETE support
-
-dotenv – Environment variables
-
-🧱 Project Architecture
-
-The application follows the MVC (Model-View-Controller) architecture:
-
+```
 wanderlust/
-├── app.js                 # Main application file
-├── controllers/           # Business logic
-├── models/                # Mongoose schemas
-├── routes/                # Express routes
-├── middleware/            # Custom middleware
-├── utils/                 # Helper utilities
-├── views/                 # EJS templates
-├── public/                # Static assets
-└── init/                  # Database initialization
+├── app.js              # Main application file
+├── controllers/        # Business logic
+├── models/             # Mongoose schemas
+├── routes/             # Express routes
+├── middleware/         # Custom middleware
+├── utils/              # Helper utilities
+├── views/              # EJS templates
+├── public/             # Static assets
+└── init/               # Database initialization
+```
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
-git clone <your-repository-url>
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone <repository-url>
 cd wanderlust
+```
 
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
+
+```bash
 npm install
+```
 
-3️⃣ Environment Variables
+### 3️⃣ Environment Variables
 
-Create a .env file in the root directory:
+Create a `.env` file in the root directory:
 
+```env
 NODE_ENV=development
 ATLASDB_URL=your_mongodb_connection_string
 
@@ -151,80 +158,83 @@ CLOUDINARY_KEY=
 CLOUDINARY_SECRET=
 
 SECRET=your_session_secret
+```
 
-4️⃣ (Optional) Initialize Sample Data
+### 4️⃣ (Optional) Initialize Sample Data
+
+```bash
 node init/index.js
+```
 
-5️⃣ Start the Application
+### 5️⃣ Start the Application
+
+```bash
 node app.js
-
+```
 
 Server will start at:
 
+```
 http://localhost:8080
+```
 
-🔌 API Routes
-Listings
+---
 
-GET /listings – View all listings
+## 🔌 API Routes
 
-POST /listings – Create new listing
+### Listings
 
-GET /listings/:id – View single listing
+* `GET /listings` – View all listings
+* `POST /listings` – Create new listing
+* `GET /listings/:id` – View single listing
+* `PUT /listings/:id` – Update listing
+* `DELETE /listings/:id` – Delete listing
 
-PUT /listings/:id – Update listing
+### Reviews
 
-DELETE /listings/:id – Delete listing
+* `POST /listings/:id/reviews` – Add review
+* `DELETE /listings/:id/reviews/:reviewId` – Delete review
 
-Reviews
+### Users
 
-POST /listings/:id/reviews – Add review
+* `GET /signup` – Signup page
+* `POST /signup` – Register user
+* `GET /login` – Login page
+* `POST /login` – Authenticate user
+* `GET /logout` – Logout user
 
-DELETE /listings/:id/reviews/:reviewId – Delete review
+---
 
-Users
-
-GET /signup – Signup page
-
-POST /signup – Register user
-
-GET /login – Login page
-
-POST /login – Authenticate user
-
-GET /logout – Logout user
-
-🧪 Testing
+## 🧪 Testing
 
 The project has been manually tested for:
 
-Authentication and authorization flows
+* Authentication and authorization flows
+* CRUD operations for listings and reviews
+* Error handling for invalid routes
 
-CRUD operations for listings and reviews
+---
 
-Error handling for invalid routes
+## 🚀 Future Improvements
 
-🚀 Future Improvements
+* Pagination for listings
+* User profile pages
+* Advanced filtering options
+* UI/UX enhancements
 
-Pagination for listings
+---
 
-User profile pages
+## 👤 Author
 
-Advanced filtering options
+**Karan**
 
-UI/UX enhancements
+* GitHub: [https://github.com/Karan341](https://github.com/Karan341)
+* LinkedIn: [https://www.linkedin.com/in/karan-9889472a8/](https://www.linkedin.com/in/karan-9889472a8/)
 
-👤 Author
+---
 
-Karan
+## 🙏 Acknowledgements
 
-GitHub: https://github.com/Karan341
+* Inspired by platforms like Airbnb & Wanderlust
+* Built as part of a full-stack learning journey
 
-LinkedIn: https://www.linkedin.com/in/karan-9889472a8/
-
-
-🙏 Acknowledgements
-
-Inspired by platforms like Airbnb & Wanderlust
-
-Built as part of a full-stack learning journey
